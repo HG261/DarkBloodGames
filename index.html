@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Blood Incorporations | The Last Eco y Pixel Fighter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noche: #0a1214;
+    --niebla: #8fd6c4;
+    --hueso: #e9e4d8;
+    --sangre: #c4152f;
+    --violeta: #1c0c40;
+    --magenta: #ff2e88;
+    --amarillo: #ffd23f;
+    --maquina: "Special Elite", "Courier New", monospace;
+    --pixel: "Press Start 2P", "Courier New", monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--noche); }
+  body {
+    min-height: 100vh;
+    color: var(--hueso);
+    font-family: var(--maquina);
+    background: var(--noche);
+  }
+
+  /* ---------- Cabecera ---------- */
+  header {
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem 2.5rem;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(196, 21, 47, .35), transparent 60%),
+      var(--noche);
+  }
+  header h1 {
+    font-family: var(--maquina);
+    font-weight: 400;
+    font-size: clamp(2rem, 7vw, 4.2rem);
+    line-height: 1.05;
+    color: var(--sangre);
+    text-shadow: 0 0 24px rgba(196, 21, 47, .55);
+    letter-spacing: .02em;
+  }
+  header p {
+    max-width: 62ch;
+    margin: 1.25rem auto 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #cfcabd;
+  }
+
+  /* ---------- Duelo de paneles ---------- */
+  .duelo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel {
+    position: relative;
+    min-height: 460px;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Terror */
+  .terror {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(143, 214, 196, .18), transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(143, 214, 196, .10), transparent 60%),
+      #070d0f;
+    clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+    padding-right: clamp(3rem, 9vw, 8rem);
+  }
+  .terror h2 {
+    font-family: var(--maquina);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    color: var(--hueso);
+    letter-spacing: .03em;
+    text-shadow:
+      0 .07em 0 rgba(143, 214, 196, .55),
+      0 .14em 0 rgba(143, 214, 196, .32),
+      0 .21em 0 rgba(143, 214, 196, .16),
+      0 .28em 0 rgba(143, 214, 196, .07);
+    animation: eco 2.4s ease-out 1;
+  }
+  @keyframes eco {
+    from {
+      text-shadow:
+        0 0 0 rgba(143, 214, 196, .55),
+        0 0 0 rgba(143, 214, 196, .32),
+        0 0 0 rgba(143, 214, 196, .16),
+        0 0 0 rgba(143, 214, 196, .07);
+    }
+  }
+  .terror .etiqueta {
+    font-size: .95rem;
+    color: var(--niebla);
+    margin-bottom: 1.4rem;
+    border: 1px solid rgba(143, 214, 196, .5);
+    padding: .3rem .8rem;
+  }
+  .terror blockquote {
+    margin: 2.6rem 0 2.2rem;
+    max-width: 28ch;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #cfd9d5;
+  }
+  .trailer {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    margin: 0 0 2.2rem;
+    background: #000;
+    border: 1px solid rgba(143, 214, 196, .5);
+    box-shadow: 0 0 24px rgba(143, 214, 196, .2);
+  }
+  .btn-terror {
+    display: inline-block;
+    padding: .95rem 1.8rem;
+    font-family: var(--maquina);
+    font-size: 1.05rem;
+    color: var(--hueso);
+    text-decoration: none;
+    border: 1px solid var(--niebla);
+    box-shadow: 0 0 18px rgba(143, 214, 196, .25), inset 0 0 18px rgba(143, 214, 196, .08);
+    transition: background .2s, color .2s, box-shadow .2s;
+  }
+  .btn-terror:hover {
+    background: var(--niebla);
+    color: #06100e;
+    box-shadow: 0 0 32px rgba(143, 214, 196, .6);
+  }
+
+  /* Peleas */
+  .peleas {
+    margin-left: -9%;
+    padding-left: clamp(3rem, 11vw, 9rem);
+    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+    background:
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, .22) 0 2px, transparent 2px 4px),
+      linear-gradient(160deg, #2a0f5e 0%, var(--violeta) 55%, #12062b 100%);
+    font-family: var(--pixel);
+  }
+  .peleas .etiqueta {
+    font-size: .6rem;
+    color: var(--violeta);
+    background: var(--amarillo);
+    padding: .55rem .7rem;
+    margin-bottom: 1.6rem;
+  }
+  .peleas h2 {
+    font-family: var(--pixel);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3.6vw, 2.5rem);
+    line-height: 1.35;
+    color: var(--amarillo);
+    text-shadow: 4px 4px 0 var(--magenta);
+  }
+  .peleas blockquote {
+    margin: 2.6rem 0 2.2rem;
+    max-width: 26ch;
+    font-size: .78rem;
+    line-height: 2;
+    color: #efe6ff;
+  }
+  .btn-pixel {
+    display: inline-block;
+    padding: 1rem 1.4rem;
+    font-family: var(--pixel);
+    font-size: .72rem;
+    line-height: 1.5;
+    color: var(--violeta);
+    text-decoration: none;
+    background: var(--amarillo);
+    box-shadow: 5px 5px 0 var(--magenta);
+    transition: transform .08s, box-shadow .08s;
+  }
+  .btn-pixel:hover { background: #ffe27a; }
+  .btn-pixel:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 var(--magenta);
+  }
+
+  a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+  footer {
+    text-align: center;
+    padding: 1.6rem 1rem 2rem;
+    font-size: .85rem;
+    color: #8a8678;
+  }
+
+  /* ---------- Móvil ---------- */
+  @media (max-width: 760px) {
+    .duelo { grid-template-columns: 1fr; }
+    .panel { min-height: 0; }
+    .terror {
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+      padding: 3rem 1.5rem 4rem;
+    }
+    .peleas {
+      margin: -2.5rem 0 0;
+      clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+      padding: 4.5rem 1.5rem 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .terror h2 { animation: none; }
+    .btn-terror, .btn-pixel { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dark Blood Incorporations</h1>
+  <p>
+    Para nuestro proyecto integrador desarrollamos 2 videojuegos, uno de terror y uno de peleas,
+    para estudiar el comportamiento psicológico de las personas y cuáles son sus emociones
+    conforme pasa el tiempo mientras juegan.
+  </p>
+</header>
+
+<main class="duelo">
+  <section class="panel terror">
+    <span class="etiqueta">Demo</span>
+    <h2>The Last Eco</h2>
+    <blockquote>&ldquo;Algunos recuerdos nunca desaparecen. Solo esperan a que regreses&rdquo;.</blockquote>
+    <img src="imagenes/TLE.jpeg" width="550px" height="350px">
+    <img src="imagenes/TLE2.jpeg" width="550px" height="350px">
+    <video class="trailer" controls playsinline preload="metadata">
+      <source src="TheLastEco_video.mp4" type="video/mp4">
+      Tu navegador no puede reproducir el video.
+      <a href="videos/TheLastEco_video.mp4"></a>.
+    </video>
+  </section>
+
+  <section class="panel peleas">
+    <span class="etiqueta">Beta 0.1</span>
+    <h2>Pixel Fighter</h2>
+    <blockquote>&ldquo;Dos peleadores, un escenario, una leyenda&rdquo;.</blockquote>
+    <img src="imagenes/PF.png" width="350px" height="250px">
+    <img src="imagenes/PF2.png" width="350px" height="250px">
+    <img src="imagenes/PF3.png" width="350px" height="250px">
+    <video class="trailer" controls playsinline preload="metadata">
+      <source src="PixelFighter_video.mp4" type="video/mp4">
+      Tu navegador no puede reproducir el video.
+      <a href="videos/PixelFighter.mp4"></a>.
+    </video>
+  </section>
+</main>
+
+<p>
+  No te pierdas ningún avance, te esperamos.
+</p>
+
+<footer>Dark Blood Incorporations &middot; Proyecto integrador</footer>
+
+</body>
+</html>
